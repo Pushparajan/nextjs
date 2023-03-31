@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Script from 'next/script'
+import Button from '@/components/Buttons'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -21,6 +23,14 @@ export default function Home() {
             <code className={styles.code}>pages/index.js</code>
           </p>
           <div>
+            <Script id="show-alert" strategy="afterInteractive">
+              {`alert ("Hello World!")`}
+            </Script>
+          </div>
+          <div>
+            <div>
+              <h1>My Page</h1>
+            </div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
@@ -116,6 +126,12 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
+        </div>
+        <div>
+        <Button
+                text="I'm a button!"
+                func={() => alert("hello world!")}
+        />
         </div>
       </main>
     </>
